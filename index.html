@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home | schoology</title>
+  <link rel="icon" type="image/x-icon" href="unnamed.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    hey dude
+  </header>
+
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search games...">
+  </div>
+
+  <div class="games-grid" id="gamesGrid"></div>
+
+<script>
+fetch("games.json")
+  .then(res => res.json())
+  .then(games => {
+    const grid = document.getElementById("gamesGrid");
+
+    games.forEach(game => {
+      const card = document.createElement("a");
+      card.className = "game-card";
+      card.href = "play.html?name=" + encodeURIComponent(game.name) +
+                   "&url=" + encodeURIComponent(game.link);
+      card.target = "_blank";
+
+      card.innerHTML = `
+        <img src="${game.image}">
+        <h3>${game.name}</h3>
+      `;
+
+      grid.appendChild(card);
+    });
+  });
+</script>
+
+  <footer>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
