@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home | schoology</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 800px;
+  max-width: 95%;
+  padding: 20px;
+}
+
+.game-wrapper {
+  background: #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #334155;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+  display: block;
+  background: black;
+}
+
+.game-info {
+  margin-top: 15px;
+}
+
+.game-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.fullscreen-btn {
+  background: #1e293b;
+  color: white;
+  border: 1px solid #334155;
+}
+
+.fullscreen-btn:hover {
+  background: #334155;
+}
+
+.back-btn {
+  background: #dc2626;
+  color: white;
+}
+
+.back-btn:hover {
+  background: #b91c1c;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="game-wrapper">
+    <iframe id="gameFrame"></iframe>
+  </div>
+
+  <div class="game-info">
+    <div class="game-title" id="title">Loading...</div>
+
+    <div class="buttons">
+      <button class="fullscreen-btn" onclick="fullscreenGame()">
+        ⛶ Fullscreen
+      </button>
+
+      <button class="back-btn" onclick="goBack()">
+        ⬅ Back
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+
+const name = params.get("name");
+const url = params.get("url");
+
+document.getElementById("title").textContent = name || "Game";
+document.getElementById("gameFrame").src = url || "";
+
+function goBack() {
+  window.location.href = "index.html";
+}
+
+function fullscreenGame() {
+  const frame = document.getElementById("gameFrame");
+
+  if (frame.requestFullscreen) {
+    frame.requestFullscreen();
+  } else if (frame.webkitRequestFullscreen) {
+    frame.webkitRequestFullscreen();
+  } else if (frame.msRequestFullscreen) {
+    frame.msRequestFullscreen();
+  }
+}
+</script>
+
+</body>
+</html>

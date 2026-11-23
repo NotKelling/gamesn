@@ -1,0 +1,54 @@
+
+[
+  {
+    "name": "Among Us",
+    "link": "games/out_amongus.html",
+    "image": "images/amongus.jpg"
+  },
+  {
+    "name": "Basket Bros",
+    "link": "games/out_basketbros.html",
+    "image": "images/basketbros.jpg"
+  },
+  {
+    "name": "Basket Random",
+    "link": "games/out_basketrandom.html",
+    "image": "images/basketrandom.jpg"
+  },
+  {
+    "name": "Chess",
+    "link": "games/out_chess.html",
+    "image": "images/chess.png"
+  },
+  {
+    "name": "Eaglercraft",
+    "link": "games/out_eagcraft.html",
+    "image": "images/eaglercraft.jpg"
+  },
+  {
+    "name": "Five Nights at Freddy's",
+    "link": "games/out_fnaf.html",
+    "image": "images/fnaf.jpg"
+  },
+  {
+    "name": "Level Devil",
+    "link": "games/out_leveldevil.html",
+    "image": "images/leveldevil.jpg"
+  },
+  {
+    "name": "OVO",
+    "link": "games/out_ovo.html",
+    "image": "images/ovo.jpg"
+  },
+  {
+    "name": "Soccer Random",
+    "link": "games/soccer-random.htm",
+    "image": "images/soccerrandom.png"
+  },
+  {
+    "name": "Super Mario 64",
+    "link": "games/out_sm64.html",
+    "image": "images/sm64.jpg"
+  }
+]
+
